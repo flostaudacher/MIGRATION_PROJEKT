@@ -5,6 +5,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.layout.Pane;
 
 public class areachart extends Pane{
+	
 	public static AreaChart<Number, Number> areachart() {
 		/**
 		 * creating our xAxis therefore we had to override the classic numberAxis and make it scale logarithmic, which shows us the current size of our community

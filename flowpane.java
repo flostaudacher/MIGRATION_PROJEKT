@@ -18,6 +18,8 @@ public class flowpane extends Application{
 		 */
 		primaryStage.setTitle("Flowpane Layout");
 		
+		System.out.println("Creating and filling Flowpane with data ...");
+		
 		FlowPane flowpane = new FlowPane();
 		
 		Scene scene = new Scene(flowpane, 1050, 400);
@@ -25,15 +27,20 @@ public class flowpane extends Application{
 		/**
 		 * setup our data per translating our csv file into a 2 D array
 		 */
+		System.out.println("Get data to create FlowPane ...");
 		Import.setup();
 		/**
 		 * creating our charts
 		 */
+		System.out.println("Creating barchart ...");
+		barchartMethods.SetGroups();
 		BarChart<String, Number> barChart = barchart.barchart();
+		System.out.println("Creating areaChart ...");
 		AreaChart<Number, Number> areaChart = areachart.areachart();
 		/**
 		 * filling our flowpane
 		 */
+		System.out.println("Filling the Flowpane ...");
 		flowpane.getChildren().addAll(barChart, areaChart);
 		flowpane.setVgap(500);
 		/**
@@ -42,8 +49,10 @@ public class flowpane extends Application{
 		primaryStage.setTitle("Balkendiagramm meiner Corona Arbeit");
 		primaryStage.setScene(scene);
 		primaryStage.show();  
-		
 	}
+	/**
+	 * visualize
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

@@ -3,20 +3,30 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 public class Import {
+	/**
+	 * variables which are needed in this and in other classes
+	 */
 	public static String [][] arr;
 	public static int anzahlZeilen;
 	public static int anzahlSpalten;
-	public static String filelocation= "E:\\Migration_data\\noe_pop_migration_background_2012_2019_lau3.dat";
-	public static String InputLine = "";
+	private static final String FILELOCATION= "E:\\Migration_data\\noe_pop_migration_background_2012_2019_lau3.dat";
+	private static String InputLine = "";
+
+	/**
+	 * all our data gets setup in a 2 D array which can be used in other classes
+	 */
 	static void setup() {
 		getNumOfRowCol();
 		arr = new String [anzahlZeilen][anzahlSpalten];
 		Scanner sc= null;
 		int Rowc = 0;
-		System.out.println("Array wird angelegt");
+		System.out.println("Creating Array ...");
+		/**
+		 * reading our csv file
+		 */
 		try 
 		{
-			sc= new Scanner (new BufferedReader(new FileReader(filelocation))); // file wird angelegt
+			sc= new Scanner (new BufferedReader(new FileReader(FILELOCATION)));
 
 			while (sc.hasNextLine()) {
 				InputLine= sc.nextLine();
@@ -30,8 +40,10 @@ public class Import {
 			System.out.println(e);
 		}	
 	}
+	/**
+	 * prints our data which was translated to an array to console
+	 */
 	public static void printArray() {
-		System.out.println("Array wird ausgegeben");
 		for (int Rowc = 0; Rowc < anzahlZeilen; Rowc++) {
 			for (int Colc = 0; Colc < anzahlSpalten; Colc++) {
 				System.out.println(arr[Rowc][Colc]);
@@ -40,11 +52,14 @@ public class Import {
 		}
 		return;
 	}
+	/**
+	 * Scans and calculates the Number of Columms and Rows our file has
+	 */
 	static void getNumOfRowCol() {
 		Scanner sc= null;
-		System.out.println("Anzahl an Zeilen und Spalten werden hier berechnet");
+		System.out.println("Translating Data to Array ...");
 		try {
-			sc = new Scanner(new BufferedReader(new FileReader(filelocation)));
+			sc = new Scanner(new BufferedReader(new FileReader(FILELOCATION)));
 			sc.useDelimiter(";");
 			while (sc.hasNextLine()) {
 				InputLine=sc.nextLine();

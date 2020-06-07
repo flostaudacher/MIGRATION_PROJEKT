@@ -1,5 +1,4 @@
 import java.util.Arrays;
-
 import javafx.collections.FXCollections;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
