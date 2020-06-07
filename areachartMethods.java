@@ -25,11 +25,25 @@ public class areachartMethods {
 	 * fill the chart with data
 	 */
 	public static void createTheChart(Series<Number, Number> data) {
-		for (int Rowc = 1; Rowc < Import.anzahlZeilen + 1; Rowc=Rowc+5) {								
+		for (int Rowc = 1; Rowc < Import.anzahlZeilen + 1; Rowc=Rowc+5) {	
+			
+			
+			/**
+			 * calculate our values for the x and the y Axis (Numpop (Number of population) and percent (percentage of emigrants in our community))
+			 */
+		
 			AVERAGEARR[0]=calc(Rowc,0,5);
 			AVERAGEARR[1]=calc(Rowc,1,10);
 			Number NumPop=(AVERAGEARR[0]);
 			Number percent=(AVERAGEARR[1]/AVERAGEARR[0])*100;
+		
+			Number NumPop=(calc(Rowc,0,5));
+			Number percent=(calc(Rowc,1,10)/calc(Rowc,0,5))*100;
+
+			
+			
+			
+			
 			data.getData().add(new XYChart.Data<Number, Number>(NumPop,percent));
 		}
 	}
@@ -37,11 +51,9 @@ public class areachartMethods {
 	 * calculate the the values
 	 */
 	private static float calc(int rowc, int i, int where) {
-		// TODO Auto-generated method stub
 		for (int runV= 0;  runV <= STEPLENGTH; runV++) {
 			AVERAGEARR[i]=AVERAGEARR[i]+getWert(Import.arr[rowc][where]);
 		}
-		Number x = AVERAGEARR[i]/STEPLENGTH;
 		return AVERAGEARR[i]/STEPLENGTH;
 	}	
 }

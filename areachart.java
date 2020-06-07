@@ -1,5 +1,4 @@
-import javafx.scene.Group;
-import javafx.scene.Scene;
+
 import javafx.scene.chart.AreaChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;

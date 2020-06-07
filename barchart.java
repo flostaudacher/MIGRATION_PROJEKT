@@ -1,13 +1,10 @@
 import java.util.Arrays;
 
 import javafx.collections.FXCollections;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.Pane;
 
 public class barchart extends Pane {
