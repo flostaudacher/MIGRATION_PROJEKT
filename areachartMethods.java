@@ -6,7 +6,7 @@ public class areachartMethods {
 	 * Variables needed in the entire class
 	 */
 	private static final int STEPLENGTH=9;
-	private static final float AVERAGEARR[] = new float[2];
+	public static  float averageArr[] = new float[2];
 	/*
 	 * create the Chart
 	 */
@@ -42,9 +42,9 @@ public class areachartMethods {
 	 */
 	private static float calc(int rowc, int i, int where) {
 		for (int runV= 0;  runV <= STEPLENGTH; runV++) {
-			AVERAGEARR[i]=AVERAGEARR[i]+getWert(Import.arr[rowc][where]);
+			averageArr[i]=averageArr[i]+getWert(Import.arr[rowc][where]);
 		}
-		AVERAGEARR[i] = AVERAGEARR[i]/STEPLENGTH;
-		return AVERAGEARR[i];
+		averageArr[i] = averageArr[i]/STEPLENGTH;
+		return averageArr[i];
 	}	
 }
