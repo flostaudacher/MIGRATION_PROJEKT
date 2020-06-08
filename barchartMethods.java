@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 
@@ -7,8 +5,10 @@ public class barchartMethods {
 	
 
 	public static int Version = 0;	
-	private static int groupArr[] = {0,0,0,0,0,0};
-	
+	private static int groupArr[] = new int[6];
+	private static int vers1Arr[] = {200, 350, 500, 1000, 2500, 4000};
+	private static int vers2Arr[] = {2000, 4000, 8000, 12500, 25000, 45000};
+	private static int vers3Arr[] = {400, 1000, 3000, 6400, 25000, 45000};
 	private static final float VALUEARR[] = new float [6];
 	/**
 	 * @param s is the series of our XYChart (year) we will fill with data 
@@ -84,35 +84,34 @@ public class barchartMethods {
 	/**
 	 * defining to Versions of our groups
 	 */
-	public static void SetGroups() {	
-		if (Version == 1 ) {
-			groupArr[0] = 200;
-			groupArr[1] = 350;
-			groupArr[2] = 500;
-			groupArr[3] = 1000;
-			groupArr[4] = 2500;
-			groupArr[5] = 4000;
-		}
-		if (Version == 2 ) {
-			groupArr[0] = 2000;
-			groupArr[1] = 4000;
-			groupArr[2] = 8000;
-			groupArr[3] = 12500;
-			groupArr[4] = 25000;
-			groupArr[5] = 45000;
-		}
-		if (Version == 3 ) {
-			groupArr[0] = 400;
-			groupArr[1] = 1000;
-			groupArr[2] = 3000;
-			groupArr[3] = 6400;
-			groupArr[4] = 25600;
-			groupArr[5] = 45000;
-		}
-	}
-	public static void setVersion(int v) {
-		Version = v ;
-		SetGroups();
-	}
 
+	/**
+	 * setting the version
+	 */
+	
+	/**
+	 * returning the values of the diffrent Versions
+	 * @return
+	 */
+	public static int getVArray(int x, int v) {
+		if (v == 1 ) {
+			for(int i = 0; i < groupArr.length; i++) {
+				groupArr[i]=vers1Arr[i];
+			}
+			return vers1Arr[x];
+		}
+		if (v == 2 ) {
+			for(int i = 0; i < groupArr.length; i++) {
+				groupArr[i]=vers2Arr[i];
+			}
+			return vers2Arr[x];
+		}
+		if (v == 3 ) {
+			for(int i = 0; i < groupArr.length; i++) {
+				groupArr[i]=vers3Arr[i];
+			}
+			return vers3Arr[x];
+		}
+		return -1;
+	}
 }

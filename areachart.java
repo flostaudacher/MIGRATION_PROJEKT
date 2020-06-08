@@ -11,20 +11,20 @@ public class areachart extends Pane{
 		 * creating our xAxis therefore we had to override the classic numberAxis and make it scale logarithmic, which shows us the current size of our community
 		 */
 		LogarithmicNumberAxis xAxis= new LogarithmicNumberAxis();
-		xAxis.setLabel("Ortsgröße/ Einwohnerzahl");
+		xAxis.setLabel("Population numbers");
 		/**
 		 * creating a standard numberAxis, which shows us the percentage of migration
 		 */
 		NumberAxis yAxis= new NumberAxis();
-		yAxis.setLabel("Migartionsanteil des Ortes in  %");
+		yAxis.setLabel("percantage of migration");
 		/**
 		 * creating an areaChart with the parameters we previously created
 		 */
 		AreaChart<Number, Number> areaChart = new AreaChart<Number,Number>(xAxis,yAxis);
-		areaChart.setTitle("Orte mit Anteile an Ausländern");
+		areaChart.setTitle("data of all municipalities in lower austria");
 		
 		XYChart.Series<Number, Number> data = new XYChart.Series<>();
-		data.setName("Werte des % Ausländeranteils bei jeweiliger Bevölkerung in Niederösterreich");
+		data.setName("data of the communities");
 		
 		/**
 		 * creating the areachart and filling it with data, all methods needed to create the areachart can be found in the areachartmethods class
@@ -36,7 +36,6 @@ public class areachart extends Pane{
 		areaChart.setCreateSymbols(false);
 		areaChart.getData().add(data);
 		return areaChart;
-		
 	}
 	
 }

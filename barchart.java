@@ -14,17 +14,17 @@ public class barchart extends Pane {
 		CategoryAxis xAxis = new CategoryAxis();  
 		xAxis.setCategories(FXCollections.<String>
 		observableArrayList(Arrays.asList("GROUP 1", "GROUP 2", "GROUP 3", "GROUP 4", "GROUP 5", "GROUP 6")));
-		xAxis.setLabel("Anteil in den Verschiedenen Jahren");
+		xAxis.setLabel("percantage in diffrent years");
 		/**
 		 * the yAxis shows us the percentage of Migration in different groups
 		 */
 		NumberAxis yAxis = new NumberAxis();
-		yAxis.setLabel("Anteil des Migrationsantiel in %");
+		yAxis.setLabel("perentage of migration %");
 		/**
 		 * creating our barchart with the parameters we previously created
 		 */
 		BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis); 
-		barChart.setTitle("Werte des % Ausländeranteils bei jeweiliger Bevölkerung in Niederösterreich");		
+		barChart.setTitle("Causality representation for the selected version");		
 		/**
 		 * filling our barchart with data, all methods needed can be found in the barchartMethods class
 		 */
