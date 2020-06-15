@@ -82,11 +82,8 @@ public class LogarithmicNumberAxis extends ValueAxis<Number> {
                 }
             }
         }
-
         return tickPositions;
     }
-
-
     @Override
     protected double[] getRange() {
         return new double[]{
@@ -94,7 +91,6 @@ public class LogarithmicNumberAxis extends ValueAxis<Number> {
             getUpperBound()
         };
     }
-
     @Override
     protected String getTickMarkLabel(Number value) {
         NumberFormat formatter = NumberFormat.getInstance();

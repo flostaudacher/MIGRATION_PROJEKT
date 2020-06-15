@@ -16,10 +16,10 @@ public class areachartMethods {
 	/*
 	 * String gets translated to an Integer
 	 */
-	private static int getWert(String string) {
-		int Wert;
-		Wert = Integer.parseInt(string);
-		return Wert;
+	private static int getValue(String string) {
+		int Value;
+		Value = Integer.parseInt(string);
+		return Value;
 	}
 	/**
 	 * fill the chart with data
@@ -42,7 +42,7 @@ public class areachartMethods {
 	 */
 	private static float calc(int rowc, int i, int where) {
 		for (int runV= 0;  runV <= STEPLENGTH; runV++) {
-			averageArr[i]=averageArr[i]+getWert(Import.arr[rowc][where]);
+			averageArr[i]=averageArr[i]+getValue(Import.arr[rowc][where]);
 		}
 		averageArr[i] = averageArr[i]/STEPLENGTH;
 		return averageArr[i];

@@ -2,8 +2,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 
 public class barchartMethods {
-	
-
+	// variables needed in this class 
 	public static int Version = 0;	
 	private static int groupArr[] = new int[6];
 	private static int vers1Arr[] = {200, 350, 500, 1000, 2500, 4000};
@@ -83,15 +82,7 @@ public class barchartMethods {
 	}
 	/**
 	 * defining to Versions of our groups
-	 */
-
-	/**
-	 * setting the version
-	 */
-	
-	/**
 	 * returning the values of the diffrent Versions
-	 * @return
 	 */
 	public static int getVArray(int x, int v) {
 		if (v == 1 ) {
